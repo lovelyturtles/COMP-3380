@@ -11,7 +11,6 @@ import java.sql.Statement;
 public class MyDatabase
 {
     private Connection connection;
-    private final String filename = "Council_Member_Expenses.csv";
 
     //all tableNames
     private final String WORLDS = "Worlds";
