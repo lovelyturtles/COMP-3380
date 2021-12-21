@@ -15,20 +15,20 @@ public class MyDatabase
     //all tableNames
     private final String WORLDS = "Worlds";
     private final String ROLES = "Roles";
-    private final String REWARDED_BY = "Rewarded By";
+    private final String REWARDED_BY = "rewardedBy";
     private final String QUESTS = "Quests";
     private final String PLAYERS = "Players";
     private final String PERFORM = "Perform";
-    private final String ORCHESTRION = "Orchestrion Roll Table";
+    private final String ORCHESTRION = "OrchestrionRoll";
     private final String OCCUPATIONS = "Occupations";
-    private final String LOGS = "Occupation Logs";
+    private final String LOGS = "OccupationLogs";
     private final String MVEffect = "MVEffect";
     private final String MOUNTS = "Mounts";
     private final String JOBS = "Jobs";
     private final String HAVE = "Have";
-    private final String EARNED = "Earned Through";
+    private final String EARNED = "earnedThrough";
     private final String DUTIES = "Duties";
-    private final String DATACENTERS = "Datacenters";
+    private final String DATACENTERS = "DataCenters";
     private final String COMPANIONS = "Companions";
     private final String CLASSES = "Classes";
     private final String ADVENTURES = "Adventures";
