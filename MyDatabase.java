@@ -40,8 +40,10 @@ public class MyDatabase
     {
         try
         {
-            Class.forName("org.hsqldb.jdbcDriver");
-            this.connection = DriverManager.getConnection("jdbc:hsqldb:mem:mymemdb", "SA", ""); //to change filepath
+            //db parameter
+            String url = "jdbc:sqlite:C:/sqlite/take401.sqlite";
+            //create a connection to the database
+            this.connection = DriverManager.getConnection(url);
         }
         catch (ClassNotFoundException var2)
         {
