@@ -85,6 +85,18 @@ public class MyDatabase
         //prints all the contents of the specified table
         getTables(tableName);
     }
+    
+    public void QuestGiver()
+    {
+        //prints the table to see which quest giver has the most variety in the types of quests they give
+        try
+        {
+            PreparedStatement myStatement = this.connection.prepareStatement("");
+        }
+        catch(Exception e)
+        {
+        }
+    }
 
     private void getTables(String tableName)
     {
