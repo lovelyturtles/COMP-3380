@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -156,8 +154,7 @@ public class MyDatabase
                     {
                         System.out.print(", ");
                     }
-                    String colValue = myResult.getString(i);
-                    System.out.print(colValue);
+                    System.out.print(myResult.getString(i)); //print one element of a row
                 }
                 System.out.println("");
             }
