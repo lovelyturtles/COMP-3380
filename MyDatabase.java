@@ -15,7 +15,7 @@ public class MyDatabase
     //all tableNames
     private final String WORLDS = "Worlds";
     private final String ROLES = "Roles";
-    private final String REWARDED_BY = "rewardedBy";
+    private final String REWARDED_BY = "RewardedBy";
     private final String QUESTS = "Quests";
     private final String PLAYERS = "Players";
     private final String PERFORM = "Perform";
@@ -24,11 +24,12 @@ public class MyDatabase
     private final String LOGS = "OccupationLogs";
     private final String MVEffect = "MVEffect";
     private final String MOUNTS = "Mounts";
+    private final String MOUNTS = "Minions";
     private final String JOBS = "Jobs";
     private final String HAVE = "have";
     private final String EARNED = "Earned Through";
     private final String DUTIES = "Duties";
-    private final String DATACENTERS = "DatacCenters";
+    private final String DATACENTERS = "Datacenters";
     private final String COMPANIONS = "Companions";
     private final String CLASSES = "Classes";
     private final String ADVENTURES = "Adventures";
