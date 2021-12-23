@@ -153,7 +153,7 @@ public class MyDatabase
 
             while (myResult.next())
             {
-                for(int i = 0; i < cols; i++)
+                for(int i = 1; i <= cols; i++)
                 {
                     if(i > 1)
                     {
