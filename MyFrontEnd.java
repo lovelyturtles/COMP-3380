@@ -47,9 +47,9 @@ public class MyFrontEnd
             else if (var0[0].equals("show"))
             {
                 //print all the contents of the specified table
-                if(var0.length >= 2)
+                if(var0.length == 2)
                 {
-                    toRun.printTable(currLine);
+                    toRun.printTable(var0[1]);
                 }
                 else
                 {
