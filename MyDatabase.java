@@ -47,8 +47,8 @@ public class MyDatabase
         }
         catch (ClassNotFoundException ex)
         {
-			ex.printStackTrace(System.out);
-		}
+	    ex.printStackTrace(System.out);
+	}
         catch (SQLException ex)
         {
             ex.printStackTrace(System.out);
