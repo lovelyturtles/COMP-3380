@@ -56,6 +56,21 @@ public class MyFrontEnd
                     System.out.println("This command needs an argument");
                 }
             }
+            else if (var0[0].equals("qt"))
+            {
+                //Gives the table with quest givers and the variety of the type of quests they give
+                toRun.QuestGiverType();
+            }
+            else if (var0[0].equals("oa"))
+            {
+                //Gives the table with occupations and number of actions each one has
+                toRun.OccupationActions();
+            }
+            else if (var0[0].equals("oq"))
+            {
+                //Gives the table with occupations and the number of quests each one ha
+                toRun.OccupationQuests();
+            }
             else
             {
                 System.out.println("Read the help with h.");
@@ -74,7 +89,14 @@ public class MyFrontEnd
         System.out.println("h - Get help");
         System.out.println("show tablename - Prints the table all the contents of the specified table.");
         System.out.println("t - Prints the list of all the tables");
+
+        //queries
+        System.out.println("qt - Gives the table with quest givers and the variety of the type of quests they give");
+        System.out.println("oa - Gives the table with occupations and number of actions each one has");
+        System.out.println("oq - Gives the table with occupations and the number of quests each one has");
+
+        //system
         System.out.println("q - Exit the program");
-        System.out.println("---- end help ----- ");
+        System.out.println("---- End help ----- ");
     }
 }
