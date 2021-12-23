@@ -22,7 +22,7 @@ public class MyDatabase
     private final String LOGS = "OccupationLogs";
     private final String MVEffect = "MVEffect";
     private final String MOUNTS = "Mounts";
-    private final String MOUNTS = "Minions";
+    private final String MINIONS = "Minions";
     private final String JOBS = "Jobs";
     private final String HAVE = "have";
     private final String EARNED = "Earned Through";
@@ -64,6 +64,7 @@ public class MyDatabase
                                          + OCCUPATIONS + "\n"
                                          + LOGS + "\n"
                                          + MVEffect + "\n"
+                                         + MINIONS + "\n"
                                          + MOUNTS + "\n"
                                          + JOBS + "\n"
                                          + HAVE + "\n"
