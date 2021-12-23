@@ -41,13 +41,9 @@ public class MyDatabase
         try
         {
             //db parameter
-            String url = "jdbc:sqlite:C:/sqlite/take401.sqlite";
+            String url = "jdbc:sqlite:FFXIV.db";
             //create a connection to the database
-            this.connection = DriverManager.getConnection(url);
-        }
-        catch (ClassNotFoundException var2)
-        {
-            var2.printStackTrace(System.out);
+            this.connection = DriverManager.getConnection(url, "SA", "");
         }
         catch (SQLException var3)
         {
@@ -86,15 +82,63 @@ public class MyDatabase
         getTables(tableName);
     }
     
-    public void QuestGiver()
+    public void QuestGiverType()
     {
         //prints the table to see which quest giver has the most variety in the types of quests they give
         try
         {
-            PreparedStatement myStatement = this.connection.prepareStatement("");
+            String myQuery = "Select QuestGiver, count(type) AS QuestTypes From Quests Group By QuestGiver Order By QuestTypes Desc;";
+            PreparedStatement myStatement = this.connection.prepareStatement(myQuery);
+            ResultSet myResult = myStatement.executeQuery();
+
+            while (myResult.next())
+            {
+                System.out.println(myResult);
+            }
         }
         catch(Exception e)
         {
+            System.out.println("Error in getting questGiver - questType table.");
+        }
+    }
+
+    public void OccupationActions()
+    {
+        //prints the table to see which quest giver has the most variety in the types of quests they give
+        try
+        {
+            String myQuery = "Select OccupationName, count( ActionName ) As NumberOfActions From Perform Group By OccupationName Order By NumberOfActions Desc;";
+            PreparedStatement myStatement = this.connection.prepareStatement(myQuery);
+            ResultSet myResult = myStatement.executeQuery();
+
+            while (myResult.next())
+            {
+                System.out.println(myResult);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println("Error in getting Occupation - Actions table.");
+        }
+    }
+
+    public void OccupationQuests()
+    {
+        //prints the table to see which quest giver has the most variety in the types of quests they give
+        try
+        {
+            String myQuery = "Select OccupationName, count( questID ) As NumberOfQuests From Occupations join Quests on Occupations.questID = Quests.questID Group By OccupationName Order By NumberOfQuests Desc;";
+            PreparedStatement myStatement = this.connection.prepareStatement(myQuery);
+            ResultSet myResult = myStatement.executeQuery();
+
+            while (myResult.next())
+            {
+                System.out.println(myResult);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println("Error in getting Occupation - Quests table.");
         }
     }
 
@@ -102,12 +146,24 @@ public class MyDatabase
     {
         try
         {
-            PreparedStatement myStatement = this.connection.prepareStatement("Select * From ?;");
-            myStatement.setString(1, tableName);
-            ResultSet myResult = myStatement.executeQuery();
+            String query = "Select * From " + tableName + ";";
+            Statement myStatement = this.connection.createStatement();
+            ResultSet myResult = myStatement.executeQuery(query);
+            ResultSetMetaData rsmd = myResult.getMetaData();
+            int cols = rsmd.getColumnCount();
 
-            while (myResult.next()) {
-                System.out.println(myResult);
+            while (myResult.next())
+            {
+                for(int i = 0; i < cols; i++)
+                {
+                    if(i > 1)
+                    {
+                        System.out.print(", ");
+                    }
+                    String colValue = myResult.getString(i);
+                    System.out.print(colValue);
+                }
+                System.out.println("");
             }
 
             myResult.close();
