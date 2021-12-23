@@ -45,9 +45,13 @@ public class MyDatabase
             //create a connection to the database
             this.connection = DriverManager.getConnection(url, "SA", "");
         }
-        catch (SQLException var3)
+        catch (ClassNotFoundException ex)
         {
-            var3.printStackTrace(System.out);
+			ex.printStackTrace(System.out);
+		}
+        catch (SQLException ex)
+        {
+            ex.printStackTrace(System.out);
         }
     }
 
