@@ -41,6 +41,7 @@ public class MyDatabase
     {
         try
         {
+            Class.forName("org.sqlite.JDBC");
             //db parameter
             String url = "jdbc:sqlite:FFXIV.db";
             //create a connection to the database
@@ -91,11 +92,9 @@ public class MyDatabase
             String myQuery = "Select QuestGiver, count(type) AS QuestTypes From Quests Group By QuestGiver Order By QuestTypes Desc;";
             PreparedStatement myStatement = this.connection.prepareStatement(myQuery);
             ResultSet myResult = myStatement.executeQuery();
-
-            while (myResult.next())
-            {
-                System.out.println(myResult);
-            }
+            PrintStream resultPrinter = System.out;
+            String queryResult = myResult.getString(1);
+            resultPrinter.println("The quest giver who had the most variety of quest types given was:\n" + queryResult + ": " + myResult.getString(2));
         }
         catch(Exception e)
         {
@@ -111,11 +110,9 @@ public class MyDatabase
             String myQuery = "Select OccupationName, count( ActionName ) As NumberOfActions From Perform Group By OccupationName Order By NumberOfActions Desc;";
             PreparedStatement myStatement = this.connection.prepareStatement(myQuery);
             ResultSet myResult = myStatement.executeQuery();
-
-            while (myResult.next())
-            {
-                System.out.println(myResult);
-            }
+            PrintStream resultPrinter = System.out;
+            String queryResult = myResult.getString(1);
+            resultPrinter.println("The occupation with the most actions is:\n" + queryResult + ": " + myResult.getString(2));
         }
         catch(Exception e)
         {
@@ -131,11 +128,9 @@ public class MyDatabase
             String myQuery = "Select OccupationName, count( questID ) As NumberOfQuests From Occupations join Quests on Occupations.questID = Quests.questID Group By OccupationName Order By NumberOfQuests Desc;";
             PreparedStatement myStatement = this.connection.prepareStatement(myQuery);
             ResultSet myResult = myStatement.executeQuery();
-
-            while (myResult.next())
-            {
-                System.out.println(myResult);
-            }
+            PrintStream resultPrinter = System.out;
+            String queryResult = myResult.getString(1);
+            resultPrinter.println("The occupation that has the most quest types is:\n" + queryResult + ": " + myResult.getString(2));
         }
         catch(Exception e)
         {
