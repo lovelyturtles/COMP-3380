@@ -106,6 +106,16 @@ public class MyFrontEnd
                 //Gives the table with roles ranked based on their average recast time
                 toRun.AveRecastRoles();
             }
+            else if (var0[0].equals("lMinions"))
+            {
+                //Gives the level that unlocks the most minions at
+                toRun.MostMinionLevel();
+            }
+            else if (var0[0].equals("popWorld"))
+            {
+                //Gives the most popular world
+                toRun.popWorld();
+            }
             else
             {
                 System.out.println("Read the help with h.");
@@ -136,6 +146,8 @@ public class MyFrontEnd
         System.out.println("windupM - Gives the table with how many minions with the substring 'Wind up' are given from each acquisitionType");
         System.out.println("seMounts - Gives the table with mounts that have special effects");
         System.out.println("aveRecastRoles - Gives the table with roles ranked based on their average recast time");
+        System.out.println("lMinions - Gives the level that unlocks the most minions at");
+        System.out.println("popWorld - Gives the most popular world");
 
         //system
         System.out.println("q - Exit the program");
