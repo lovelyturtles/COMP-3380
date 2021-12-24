@@ -126,13 +126,13 @@ public class MyFrontEnd
         System.out.println("t - Prints the list of all the tables");
 
         //queries
-        System.out.println("qt - Gives the table with quest givers and the variety of the type of quests they give");
-        System.out.println("oa - Gives the table with occupations and number of actions each one has");
+        System.out.println("qt - Gives the quest giver with the most variety type of quests they give");
+        System.out.println("oa - Gives the occupation with the the most actions each one has");
         //System.out.println("oq - Gives the table with occupations and the number of quests each one has");
-        System.out.println("sa - Gives the table with the actions that is the most shared among occupations");
-        System.out.println("sa30 - Gives the table with the actions that is the most shared among occupations over level 30");
-        System.out.println("atMonk - Gives the table with the most common Action type for Monk");
-        System.out.println("atQuests - Gives the table with the action type that is associated to the most number of quests");
+        System.out.println("sa - Gives the action that is the most among occupations");
+        System.out.println("sa30 - Gives the action that is the most shared among occupations over level 30");
+        System.out.println("atMonk - Gives the action type that is most common for Monk");
+        System.out.println("atQuests - Gives the action type that is associated to the most number of quests");
         System.out.println("windupM - Gives the table with how many minions with the substring 'Wind up' are given from each acquisitionType");
         System.out.println("seMounts - Gives the table with mounts that have special effects");
         System.out.println("aveRecastRoles - Gives the table with roles ranked based on their average recast time");
