@@ -350,7 +350,7 @@ public class MyDatabase
             ResultSet myResult = myStatement.executeQuery();
             PrintStream resultPrinter = System.out;
             String queryResult = myResult.getString(1);
-            resultPrinter.println("Monk has the most" + queryResult + "\" action type with " + myResult.getString(2) + " quests associated with it");
+            resultPrinter.println("The level that unlocks the most minions is " + queryResult + ". We unlock " + myResult.getString(2) + " minions at this level.");
         }
         catch(Exception e)
         {
