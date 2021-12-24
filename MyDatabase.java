@@ -375,6 +375,23 @@ public class MyDatabase
             System.out.println("Error in getting most popular World.");
         }
     }
+    public void leastPopOccupation()
+    {
+        //What is the least popular occupation among our players
+        try
+        {
+            String myQuery = "Select OccupationName, Count( have.playerID ) As Players From have Group By OccupationName Order By Players;";
+            PreparedStatement myStatement = this.connection.prepareStatement(myQuery);
+            ResultSet myResult = myStatement.executeQuery();
+            PrintStream resultPrinter = System.out;
+            String queryResult = myResult.getString(1);
+            resultPrinter.println("The least popular occupation among players is \"" + queryResult + "\" with only " + myResult.getString(2) + " players playing it.");
+        }
+        catch(Exception e)
+        {
+            System.out.println("Error in getting the least popular occupation.");
+        }
+    }
     private void getTables(String tableName)
     {
         try
