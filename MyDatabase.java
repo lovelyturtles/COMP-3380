@@ -232,7 +232,16 @@ public class MyDatabase
             ResultSet myResult = myStatement.executeQuery();
             ResultSetMetaData rsmd = myResult.getMetaData();
             int cols = rsmd.getColumnCount();
-            while (myResult.next())
+		
+            //print header
+            for(int i = 1; i <= cols; i++)
+	    {
+                System.out.print(rsmd.getColumnLabel(i) + " ");
+	    }
+	    System.out.println();
+		
+            //print data
+	    while (myResult.next())
             {
                 for(int i = 1; i <= cols; i++)
                 {
@@ -263,7 +272,16 @@ public class MyDatabase
             ResultSet myResult = myStatement.executeQuery();
             ResultSetMetaData rsmd = myResult.getMetaData();
             int cols = rsmd.getColumnCount();
-            while (myResult.next())
+		
+            //print header
+            for(int i = 1; i <= cols; i++)
+	    {
+                System.out.print(rsmd.getColumnLabel(i) + " ");
+	    }
+	    System.out.println();
+		
+            //print data
+	    while (myResult.next())
             {
                 for(int i = 1; i <= cols; i++)
                 {
@@ -293,7 +311,15 @@ public class MyDatabase
             ResultSet myResult = myStatement.executeQuery(query);
             ResultSetMetaData rsmd = myResult.getMetaData();
             int cols = rsmd.getColumnCount();
-
+		
+            //print header
+            for(int i = 1; i <= cols; i++)
+	    {
+                System.out.print(rsmd.getColumnLabel(i) + " ");
+	    }
+	    System.out.println();
+		
+            //print data
             while (myResult.next())
             {
                 for(int i = 1; i <= cols; i++)
