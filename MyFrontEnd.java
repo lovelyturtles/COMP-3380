@@ -116,6 +116,11 @@ public class MyFrontEnd
                 //Gives the most popular world
                 toRun.popWorld();
             }
+            else if (var0[0].equals("leastPopO"))
+            {
+                //What is the least popular occupation among our players
+                toRun.leastPopOccupation();
+            }
             else
             {
                 System.out.println("Read the help with h.");
@@ -148,6 +153,7 @@ public class MyFrontEnd
         System.out.println("aveRecastRoles - Gives the table with roles ranked based on their average recast time");
         System.out.println("lMinions - Gives the level that unlocks the most minions at");
         System.out.println("popWorld - Gives the most popular world");
+        System.out.println("leastPopO - What is the least popular occupation among our players");
 
         //system
         System.out.println("q - Exit the program");
