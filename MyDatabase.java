@@ -118,6 +118,7 @@ public class MyDatabase
         }
     }
 
+    /*
     public void OccupationQuests()
     {
         //prints the table to see which occupation has the most quests
@@ -135,6 +136,7 @@ public class MyDatabase
             System.out.println("Error in getting Occupation - Quests table.");
         }
     }
+    */
 	
     public void SharedActions()
     {
@@ -181,7 +183,7 @@ public class MyDatabase
             ResultSet myResult = myStatement.executeQuery();
             PrintStream resultPrinter = System.out;
             String queryResult = myResult.getString(1);
-            resultPrinter.println("The action type that is most common for Monk is:\n" + queryResult + ": " + myResult.getString(2));
+            resultPrinter.println("Monk has the most " + queryResult + " action type with " + myResult.getString(2) + " quests associated with it");
         }
         catch(Exception e)
         {
@@ -198,7 +200,7 @@ public class MyDatabase
             ResultSet myResult = myStatement.executeQuery();
             PrintStream resultPrinter = System.out;
             String queryResult = myResult.getString(1);
-            resultPrinter.println("The action type that has the most quests associated is:\n" + queryResult + ": " + myResult.getString(2));
+            resultPrinter.println("The action type " + queryResult + " has the most quests associated. It has " + myResult.getString(2) + " quests associated with it");
         }
         catch(Exception e)
         {
@@ -236,7 +238,7 @@ public class MyDatabase
             //print header
             for(int i = 1; i <= cols; i++)
 	    {
-                System.out.print(rsmd.getColumnLabel(i) + " ");
+                System.out.print(rsmd.getColumnLabel(i) + ", ");
 	    }
 	    System.out.println();
 		
@@ -276,7 +278,7 @@ public class MyDatabase
             //print header
             for(int i = 1; i <= cols; i++)
 	    {
-                System.out.print(rsmd.getColumnLabel(i) + " ");
+                System.out.print(rsmd.getColumnLabel(i) + ", ");
 	    }
 	    System.out.println();
 		
@@ -315,7 +317,7 @@ public class MyDatabase
             //print header
             for(int i = 1; i <= cols; i++)
 	    {
-                System.out.print(rsmd.getColumnLabel(i) + " ");
+                System.out.print(rsmd.getColumnLabel(i) + ", ");
 	    }
 	    System.out.println();
 		
