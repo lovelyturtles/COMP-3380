@@ -36,7 +36,7 @@ public class MyDatabase
         {
             Class.forName("org.sqlite.JDBC");
             //db parameter
-            String url = "jdbc:sqlite:FFXIV.db";
+            String url = "jdbc:sqlite:FFXIV.sqlite";
             //create a connection to the database
             this.connection = DriverManager.getConnection(url, "SA", "");
         }
