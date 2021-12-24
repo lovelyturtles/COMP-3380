@@ -20,7 +20,7 @@ public class MyDatabase
     private final String MINIONS = "Minions";
     private final String JOBS = "Jobs";
     private final String HAVE = "have";
-    private final String EARNED = "Earned Through";
+    private final String EARNED = "earnedThrough";
     private final String DUTIES = "Duties";
     private final String DATACENTERS = "Datacenters";
     private final String COMPANIONS = "Companions";
@@ -215,9 +215,36 @@ public class MyDatabase
             String myQuery = "Select AcquisitionType, count(Name) From Minions Where Name Like '%Wind-up%' Group By AcquisitionType Order By count(Name) Desc;";
             PreparedStatement myStatement = this.connection.prepareStatement(myQuery);
             ResultSet myResult = myStatement.executeQuery();
-            PrintStream resultPrinter = System.out;
-            String queryResult = myResult.getString(1);
-            resultPrinter.println("The number of minions with the substring 'Wind up' acquired from acquisitionType is:\n" + queryResult + ": " + myResult.getString(2));
+            ResultSetMetaData rsmd = myResult.getMetaData();
+            int cols = rsmd.getColumnCount();
+		
+            //print header
+            for(int i = 1; i <= cols; i++)
+	    {
+                if(i > 1)
+                {
+                        System.out.print(", ");
+                }
+                System.out.print(rsmd.getColumnLabel(i));
+	    }
+	    System.out.println("");
+		
+            //print data
+	    while (myResult.next())
+            {
+                for(int i = 1; i <= cols; i++)
+                {
+                    if(i > 1)
+                    {
+                        System.out.print(", ");
+                    }
+                    System.out.print(myResult.getString(i)); //print one element of a row
+                }
+                System.out.println("");
+            }
+
+            myResult.close();
+            myStatement.close();
         }
         catch(Exception e)
         {
@@ -238,9 +265,13 @@ public class MyDatabase
             //print header
             for(int i = 1; i <= cols; i++)
 	    {
-                System.out.print(rsmd.getColumnLabel(i) + ", ");
+                if(i > 1)
+                {
+                        System.out.print(", ");
+                }
+                System.out.print(rsmd.getColumnLabel(i));
 	    }
-	    System.out.println();
+	    System.out.println("");
 		
             //print data
 	    while (myResult.next())
@@ -278,9 +309,13 @@ public class MyDatabase
             //print header
             for(int i = 1; i <= cols; i++)
 	    {
-                System.out.print(rsmd.getColumnLabel(i) + ", ");
+                if(i > 1)
+                {
+                        System.out.print(", ");
+                }
+                System.out.print(rsmd.getColumnLabel(i));
 	    }
-	    System.out.println();
+	    System.out.println("");
 		
             //print data
 	    while (myResult.next())
@@ -317,9 +352,13 @@ public class MyDatabase
             //print header
             for(int i = 1; i <= cols; i++)
 	    {
-                System.out.print(rsmd.getColumnLabel(i) + ", ");
+                if(i > 1)
+                {
+                        System.out.print(", ");
+                }
+                System.out.print(rsmd.getColumnLabel(i));
 	    }
-	    System.out.println();
+	    System.out.println("");
 		
             //print data
             while (myResult.next())
