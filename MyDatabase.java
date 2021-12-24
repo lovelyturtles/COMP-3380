@@ -7,7 +7,7 @@ public class MyDatabase
 
     //all tableNames
     private final String WORLDS = "Worlds";
-    private final String ROLES = "Roles";
+    private final String ROLES = "Role";
     private final String REWARDED_BY = "RewardedBy";
     private final String QUESTS = "Quests";
     private final String PLAYERS = "Players";
