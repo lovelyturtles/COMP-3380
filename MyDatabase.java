@@ -339,6 +339,42 @@ public class MyDatabase
             System.out.println("Error in ranking roles based on average recast time.");
         }
     }
+	
+    public void MostMinionLevel()
+    {
+        //Gives the level that unlocks the most minions at
+        try
+        {
+            String myQuery = "Select Requirements As Level, Count(Name) As NumberOfMinions From Minions Where Requirements Is Not Null Group By Requirements Having Count( Name ) > 0 Order By NumberOfMinions Desc;";
+            PreparedStatement myStatement = this.connection.prepareStatement(myQuery);
+            ResultSet myResult = myStatement.executeQuery();
+            PrintStream resultPrinter = System.out;
+            String queryResult = myResult.getString(1);
+            resultPrinter.println("Monk has the most" + queryResult + "\" action type with " + myResult.getString(2) + " quests associated with it");
+        }
+        catch(Exception e)
+        {
+            System.out.println("Error in getting level that unlocks the most minions.");
+        }
+    }
+	
+    public void popWorld()
+    {
+        //Gives the most popular world
+        try
+        {
+            String myQuery = "Select WorldName, Count( playerID ) As Players From Worlds Join Players on Worlds.worldID = Players.worldID Group By WorldName Order By Players Desc;";
+            PreparedStatement myStatement = this.connection.prepareStatement(myQuery);
+            ResultSet myResult = myStatement.executeQuery();
+            PrintStream resultPrinter = System.out;
+            String queryResult = myResult.getString(1);
+            resultPrinter.println("The most popular world is \"" + queryResult + "\" with " + myResult.getString(2) + " players.");
+        }
+        catch(Exception e)
+        {
+            System.out.println("Error in getting most popular World.");
+        }
+    }
     private void getTables(String tableName)
     {
         try
