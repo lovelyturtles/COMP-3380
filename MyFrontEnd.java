@@ -66,11 +66,11 @@ public class MyFrontEnd
                 //Gives the table with occupations and number of actions each one has
                 toRun.OccupationActions();
             }
-            else if (var0[0].equals("oq"))
-            {
+            //else if (var0[0].equals("oq"))
+            //{
                 //Gives the table with occupations and the number of quests each one has
-                toRun.OccupationQuests();
-            }
+            //    toRun.OccupationQuests();
+            //}
             else if (var0[0].equals("sa"))
             {
                 //Gives the table with the actions that is the most shared among occupations
@@ -128,7 +128,7 @@ public class MyFrontEnd
         //queries
         System.out.println("qt - Gives the table with quest givers and the variety of the type of quests they give");
         System.out.println("oa - Gives the table with occupations and number of actions each one has");
-        System.out.println("oq - Gives the table with occupations and the number of quests each one has");
+        //System.out.println("oq - Gives the table with occupations and the number of quests each one has");
         System.out.println("sa - Gives the table with the actions that is the most shared among occupations");
         System.out.println("sa30 - Gives the table with the actions that is the most shared among occupations over level 30");
         System.out.println("atMonk - Gives the table with the most common Action type for Monk");
