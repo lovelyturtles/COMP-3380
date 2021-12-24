@@ -91,7 +91,7 @@ public class MyFrontEnd
                 //Gives the table with the action type that is associated to the most number of quests
                 toRun.ActionMostQuest();
             }    
-            else if (var0[0].equals("WindupM"))
+            else if (var0[0].equals("windupM"))
             {
                 //Gives the table with how many minions with the substring 'Wind up' are given from each acquisitionType
                 toRun.WindUpMinion();
